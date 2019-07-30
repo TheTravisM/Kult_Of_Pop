@@ -58,7 +58,7 @@ function atomic_blocks_editor_assets() {
 		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ),
 		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-components', 'wp-editor' ),
 		filemtime( plugin_dir_path( __FILE__ ) . 'blocks.build.js' ),
-		false
+		true
 	);
 
 	// Load the compiled styles into the editor.
@@ -95,6 +95,11 @@ add_action( 'enqueue_block_editor_assets', 'atomic_blocks_editor_assets' );
  * @since 1.0.0
  */
 function atomic_blocks_frontend_assets() {
+
+	if ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() ) {
+		return;
+	}
+
 	// Load the dismissible notice js.
 	wp_enqueue_script(
 		'atomic-blocks-dismiss-js',

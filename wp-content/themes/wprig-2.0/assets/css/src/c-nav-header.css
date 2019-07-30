@@ -1,0 +1,184 @@
+@charset "UTF-8";
+/* -- [ COMPONENT : NAV-HEADER ] --------------------------*/
+/*-----------------------------------------*/
+/* -- [ VARIABLES ] -----------------------*/
+/*-----------------------------------------*/
+/*
+* SETTINGS
+* Config...............Project-level configuration and feature switches.
+* Core.................inuitcss’ core and setup settings.
+* Global...............Project-wide variables and settings.
+*/
+/*
+@import 'var-borders';
+@import 'var-breakpoints';
+@import 'var-colors';
+@import 'var-spacing';
+@import 'var-transitions';
+@import 'var-typography';
+@import 'var-z-index';
+*/
+/* -- [ VARIABLES : COLORS ] --------------------------*/
+/* -- [ VARIABLES : ROOT ] --------------------------*/
+:root {
+  --black: $kult-black;
+  --kult-orange: $kult-orange;
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+html body {
+  color: var(--black, black);
+}
+
+/* -- [ VARIABLE : SPACING ] --------------------------*/
+/*-------------------------------------------------*/
+/* -- [ MIXINS : TOOLS ] --------------------------*/
+/*-------------------------------------------------*/
+/* tools: Site-wide Mixins and Functions.
+
+ * TOOLS
+ * Font-size............A mixin which guarantees baseline-friendly line-heights.
+ * Clearfix.............Micro clearfix mixin.
+ * Hidden...............Mixin for hiding elements.
+ * Sass MQ..............inuitcss’ default media query manager.
+
+*/
+/* -- [ MIXIN : CLEARFIX ] --------------------------*/
+/* -- [ MIXIN : FLEXBOX ] --------------------------*/
+/*------------------------------------*\
+    #FLEXBOX w/ BROWSER FALLBACKS
+\*------------------------------------*/
+/* Then we define the flow direction
+    and if we allow the items to wrap
+  * Remember this is the same as:
+  * flex-direction: row;
+  * flex-wrap: wrap;
+*/
+.c-nav-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+}
+
+.c-nav-header_ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.c-nav-header_li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.c-nav-header_li--contact {
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.c-nav-header_link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #fff;
+  font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  height: 100%;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-transition: all 0.35s ease-in;
+  transition: all 0.35s ease-in;
+  background-color: rgba(0, 0, 0, 0.01);
+  -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.01);
+          box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.01);
+  text-shadow: 0 0 0 rgba(0, 0, 0, 0.01);
+}
+
+.c-nav-header_link:hover, .c-nav-header_link:focus, .c-nav-header_link:active {
+  color: #f89921;
+  background-color: rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: inset 0 0 5px black;
+          box-shadow: inset 0 0 5px black;
+  text-shadow: 0 0 5px black;
+}
+
+@media (min-width: 576px) {
+  .c-nav-header_li--contact {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .c-nav-header_link {
+    font-size: 21px;
+    height: auto;
+  }
+}
+/*# sourceMappingURL=c-nav-header.css.map */

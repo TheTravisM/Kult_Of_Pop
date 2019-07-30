@@ -1,0 +1,28 @@
+/* -- [ MIXIN : HOVER ] --------------------------*/
+
+@mixin mix-hover {
+  &:hover { @content; }
+}
+
+@mixin mix-hover-focus {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin mix-plain-hover-focus {
+  &,
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin mix-hover-focus-active {
+  &:hover,
+  &:focus,
+  &:active {
+    @content;
+  }
+}

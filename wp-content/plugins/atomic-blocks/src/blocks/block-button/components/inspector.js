@@ -11,22 +11,12 @@ const { Component } = wp.element;
 
 // Import block components
 const {
-  InspectorControls,
-  BlockDescription,
-  ColorPalette,
-  PanelColorSettings,
+  InspectorControls
 } = wp.editor;
 
 // Import Inspector components
 const {
-	Toolbar,
-	Button,
-	PanelBody,
-	PanelRow,
-	FormToggle,
-	RangeControl,
-	SelectControl,
-	ToggleControl,
+	PanelBody
 } = wp.components;
 
 /**
@@ -42,9 +32,6 @@ export default class Inspector extends Component {
 
 		// Setup the attributes
 		const {
-			buttonText,
-			buttonUrl,
-			buttonAlignment,
 			buttonBackgroundColor,
 			buttonTextColor,
 			buttonSize,
@@ -57,23 +44,28 @@ export default class Inspector extends Component {
 		<InspectorControls key="inspector">
 			<PanelBody>
 				<ButtonSettings
+
 					// Open in new window
 					buttonTarget={ buttonTarget }
 					onChangeButtonTarget={ value =>
-						setAttributes( { buttonTarget: ! buttonTarget } )
+						setAttributes({ buttonTarget: ! buttonTarget })
 					}
+
 					// Button Size
 					buttonSize={ buttonSize }
-					onChangeButtonSize={ buttonSize => setAttributes( { buttonSize } ) }
+					onChangeButtonSize={ buttonSize => setAttributes({ buttonSize }) }
+
 					// Button Shape
 					buttonShape={ buttonShape }
-					onChangeButtonShape={ buttonShape => setAttributes( { buttonShape } ) }
+					onChangeButtonShape={ buttonShape => setAttributes({ buttonShape }) }
+
 					// Button color
 					buttonBackgroundColor={ buttonBackgroundColor }
-					onChangeButtonColor={ buttonBackgroundColor => setAttributes( { buttonBackgroundColor } ) }
+					onChangeButtonColor={ buttonBackgroundColor => setAttributes({ buttonBackgroundColor }) }
+
 					// Button text color
 					buttonTextColor={ buttonTextColor }
-					onChangeButtonTextColor={ buttonTextColor => setAttributes( { buttonTextColor } ) }
+					onChangeButtonTextColor={ buttonTextColor => setAttributes({ buttonTextColor }) }
 				/>
 			</PanelBody>
 		</InspectorControls>

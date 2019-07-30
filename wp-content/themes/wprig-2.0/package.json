@@ -103,5 +103,8 @@
     "test-gulp": "jest gulp/tests",
     "lint": "eslint assets/js/src/",
     "lint-gulp": "eslint gulp/"
+  },
+  "dependencies": {
+    "composer": "^4.1.0"
   }
 }

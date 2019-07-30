@@ -9,7 +9,7 @@ namespace AtomicBlocks\Newsletter;
 
 use AtomicBlocks\Exception\Mailchimp_API_Error_Exception;
 
-//add_action( 'init', __NAMESPACE__ . '\form_submission_listener' );
+add_action( 'init', __NAMESPACE__ . '\form_submission_listener' );
 add_action( 'wp_ajax_atomic_blocks_newsletter_submission', __NAMESPACE__ . '\form_submission_listener' );
 add_action( 'wp_ajax_nopriv_atomic_blocks_newsletter_submission', __NAMESPACE__ . '\form_submission_listener' );
 /**
@@ -20,37 +20,41 @@ add_action( 'wp_ajax_nopriv_atomic_blocks_newsletter_submission', __NAMESPACE__ 
  */
 function form_submission_listener() {
 
-	if ( empty( $_POST['atomic_blocks_newsletter_form_nonce'] ) ) {
+	if ( empty( $_POST['ab-newsletter-form-nonce'] ) ) {
 		return;
 	}
 
-	if ( wp_doing_ajax() && doing_action( 'init' ) ) {
-		return;
-	}
-
-	if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['atomic_blocks_newsletter_form_nonce'] ) ), 'ab-newsletter-form-nonce' ) ) {
+	if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['ab-newsletter-form-nonce'] ) ), 'ab-newsletter-form-nonce' ) ) {
 		send_processing_response( __( 'Nonce verification failed. Please try again.', 'atomic-blocks' ) );
 	}
 
-	if ( empty( $_POST['atomic_blocks_newsletter_mailing_list_provider'] ) || empty( $_POST['atomic_blocks_newsletter_mailing_list'] ) ) {
+	if ( empty( $_POST['ab-newsletter-mailing-list-provider'] ) || empty( $_POST['ab-newsletter-mailing-list'] ) ) {
 		send_processing_response( __( 'Invalid mailing provider configuration.', 'atomic-blocks' ) );
 	}
 
-	if ( empty( $_POST['atomic_blocks_newsletter_email'] ) ) {
+	if ( empty( $_POST['ab-newsletter-email-address'] ) ) {
 		send_processing_response( __( 'You must provide an email address.', 'atomic-blocks' ) );
 	}
 
-	$email              = sanitize_email( wp_unslash( $_POST['atomic_blocks_newsletter_email'] ) );
-	$provider           = sanitize_text_field( wp_unslash( $_POST['atomic_blocks_newsletter_mailing_list_provider'] ) );
-	$list               = sanitize_text_field( wp_unslash( $_POST['atomic_blocks_newsletter_mailing_list'] ) );
+	$email              = sanitize_email( wp_unslash( $_POST['ab-newsletter-email-address'] ) );
+	$provider           = sanitize_text_field( wp_unslash( $_POST['ab-newsletter-mailing-list-provider'] ) );
+	$list               = sanitize_text_field( wp_unslash( $_POST['ab-newsletter-mailing-list'] ) );
 	$default_attributes = atomic_blocks_newsletter_block_attributes();
-	$success_message    = ! empty( $_POST['atomic_blocks_newsletter_success_message'] ) ? sanitize_text_field( wp_unslash( $_POST['atomic_blocks_newsletter_success_message'] ) ) : $default_attributes['successMessage']['default'];
+	$success_message    = ! empty( $_POST['ab-newsletter-success-message'] ) ? sanitize_text_field( wp_unslash( $_POST['ab-newsletter-success-message'] ) ) : $default_attributes['successMessage']['default'];
+	$subscriber_status  = ! empty( $_POST['ab-newsletter-double-opt-in'] ) ? 'pending' : 'subscribed';
 
 	if ( ! is_email( $email ) ) {
 		send_processing_response( __( 'Please provide a valid email address.', 'atomic-blocks' ) );
 	}
 
-	$response = process_submission( $email, $provider, [ 'list_id' => $list ] );
+	$response = process_submission(
+		$email,
+		$provider,
+		[
+			'list_id' => $list,
+			'status'  => $subscriber_status,
+		]
+	);
 
 	if ( is_wp_error( $response ) ) {
 		send_processing_response( $response->get_error_message(), false );
@@ -66,6 +70,37 @@ function form_submission_listener() {
  * @param bool   $success Whether or not the response should communicate success or failure.
  */
 function send_processing_response( $message, $success = true ) {
+
+	/**
+	 * If this is an AMP request, set up the headers so they meet AMP requirements.
+	 */
+	// @todo look at removing $_POST usage from here, and maybe setting the headers elsewhere or adding a param to this function.
+	// phpcs:ignore WordPress.Security.NonceVerification.Missing -- False positive. Nonce is processed elsewhere before reaching here.
+	if ( function_exists( 'is_amp_endpoint' ) && ! empty( $_POST['ab-newsletter-amp-endpoint-request'] ) ) {
+
+		$redirect_url = null;
+		$location     = wp_get_referer();
+
+		if ( ! $location && ! empty( $_SERVER['HTTP_REFERER'] ) ) {
+			$location = wp_validate_redirect( wp_sanitize_redirect( esc_url_raw( wp_unslash( $_SERVER['HTTP_REFERER'] ) ) ) );
+		}
+
+		if ( $location ) {
+			$redirect_url = add_query_arg(
+				[
+					'ab-newsletter-submitted'          => true,
+					'ab-newsletter-submission-message' => rawurlencode( $message ),
+				],
+				$location
+			);
+
+			header_remove( 'Location' );
+			header( "AMP-Redirect-To: $redirect_url" );
+			header( 'AMP-Access-Control-Allow-Source-Origin: ' . home_url() );
+			header( 'Access-Control-Expose-Headers: AMP-Redirect-To, AMP-Access-Control-Allow-Source-Origin' );
+		}
+	}
+
 	if ( $success && wp_doing_ajax() ) {
 		wp_send_json_success( [ 'message' => esc_html( $message ) ] );
 	}
@@ -89,9 +124,10 @@ function send_processing_response( $message, $success = true ) {
  */
 function process_submission( $email, $provider, array $args ) {
 
-	$provider = sanitize_text_field( trim( (string) $provider ) );
-	$email    = sanitize_email( trim( (string) $email ) );
-	$list_id  = ! empty( $args['list_id'] ) ? sanitize_text_field( trim( (string) $args['list_id'] ) ) : false;
+	$provider       = sanitize_text_field( trim( (string) $provider ) );
+	$email          = sanitize_email( trim( (string) $email ) );
+	$list_id        = ! empty( $args['list_id'] ) ? sanitize_text_field( trim( (string) $args['list_id'] ) ) : false;
+	$args['status'] = ! empty( $args['status'] ) ? sanitize_key( $args['status'] ) : false;
 
 	$errors = [
 		'invalid_provider' => esc_html__( 'Invalid newsletter provider.', 'atomic-blocks' ),
@@ -127,6 +163,7 @@ function process_submission( $email, $provider, array $args ) {
 					$email,
 					[
 						'list_id' => $list_id,
+						'status'  => $args['status'],
 					]
 				);
 			} catch ( Mailchimp_API_Error_Exception $exception ) {

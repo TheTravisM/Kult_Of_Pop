@@ -14,11 +14,11 @@ const { __ } = wp.i18n;
 
 // Register block controls
 const {
-	registerBlockType,
+	registerBlockType
 } = wp.blocks;
 
 // Register alignments
-const validAlignments = [ 'center', 'wide' ];
+const validAlignments = [ 'center', 'wide', 'full' ];
 
 // Register the block
 registerBlockType( 'atomic-blocks/ab-post-grid', {
@@ -29,7 +29,7 @@ registerBlockType( 'atomic-blocks/ab-post-grid', {
 	keywords: [
 		__( 'post', 'atomic-blocks' ),
 		__( 'page', 'atomic-blocks' ),
-		__( 'grid', 'atomic-blocks' ),
+		__( 'grid', 'atomic-blocks' )
 	],
 
 	getEditWrapperProps( attributes ) {
@@ -44,5 +44,5 @@ registerBlockType( 'atomic-blocks/ab-post-grid', {
 	// Render via PHP
 	save() {
 		return null;
-	},
-} );
+	}
+});

@@ -287,6 +287,28 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return ! post_password_required() && is_singular() && ( comments_open() || get_comments_number() );
 				},
 			],
+			'wp-rig-page'   => [
+				'file'             => 'page.min.css',
+				'preload_callback' => function() {
+					return is_page();
+				},
+			],
+			'wp-rig-test'   => [
+				'file'             => 'test.min.css',
+				'preload_callback' => '__return_true',
+			],
+			'wp-rig-c-header'   => [
+				'file'             => 'c-header.min.css',
+				'preload_callback' => '__return_true',
+			],
+			'wp-rig-c-nav-header'   => [
+				'file'             => 'c-nav-header.min.css',
+				'preload_callback' => '__return_true',
+			],
+			'wp-rig-social-media'   => [
+				'file'             => 'c-social-media.min.css',
+				'preload_callback' => '__return_true',
+			],
 			'wp-rig-content'    => [
 				'file'             => 'content.min.css',
 				'preload_callback' => '__return_true',
@@ -304,7 +326,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				},
 			],
 			'wp-rig-front-page' => [
-				'file' => 'front-page.min.css',
+				'file'             => 'front-page.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'front-page.php' === basename( $template );

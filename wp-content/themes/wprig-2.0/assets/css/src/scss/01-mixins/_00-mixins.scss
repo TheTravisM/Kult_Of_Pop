@@ -1,0 +1,16 @@
+/*-------------------------------------------------*/
+/* -- [ MIXINS : TOOLS ] --------------------------*/
+/*-------------------------------------------------*/
+
+/* tools: Site-wide Mixins and Functions.
+
+ * TOOLS
+ * Font-size............A mixin which guarantees baseline-friendly line-heights.
+ * Clearfix.............Micro clearfix mixin.
+ * Hidden...............Mixin for hiding elements.
+ * Sass MQ..............inuitcss’ default media query manager.
+
+*/
+
+@import 'mix-clearfix.scss';
+@import 'mix-flexbox.scss';

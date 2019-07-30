@@ -6,6 +6,8 @@
 import classnames from 'classnames';
 import Edit from './edit';
 
+import deprecated from './deprecated/deprecated';
+
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const {
@@ -18,7 +20,7 @@ const {
 	getFontSizeClass,
 	FontSizePicker,
 	withFontSizes,
-	getColorClassName,
+	getColorClassName
 } = wp.editor;
 
 // Register the block
@@ -31,37 +33,37 @@ registerBlockType( 'atomic-blocks/ab-pricing-table-price', {
 	keywords: [
 		__( 'pricing table', 'atomic-blocks' ),
 		__( 'price', 'atomic-blocks' ),
-		__( 'shop', 'atomic-blocks' ),
+		__( 'shop', 'atomic-blocks' )
 	],
 
 	attributes: {
 		price: {
-			type: 'string',
+			type: 'string'
 		},
 		currency: {
-			type: 'string',
+			type: 'string'
 		},
 		fontSize: {
-			type: 'string',
+			type: 'string'
 		},
 		customFontSize: {
 			type: 'number',
-			default: 60,
+			default: 60
 		},
 		textColor: {
-			type: 'string',
+			type: 'string'
 		},
 		customTextColor: {
-			type: 'string',
+			type: 'string'
 		},
 		backgroundColor: {
-			type: 'string',
+			type: 'string'
 		},
 		customBackgroundColor: {
-			type: 'string',
+			type: 'string'
 		},
 		term: {
-			type: 'string',
+			type: 'string'
 		},
 		showTerm: {
 			type: 'boolean',
@@ -73,20 +75,20 @@ registerBlockType( 'atomic-blocks/ab-pricing-table-price', {
 		},
 		paddingTop: {
 			type: 'number',
-			default: 10,
+			default: 10
 		},
 		paddingRight: {
 			type: 'number',
-			default: 20,
+			default: 20
 		},
 		paddingBottom: {
 			type: 'number',
-			default: 10,
+			default: 10
 		},
 		paddingLeft: {
 			type: 'number',
-			default: 20,
-		},
+			default: 20
+		}
 	},
 
 	// Render the block components
@@ -111,7 +113,7 @@ registerBlockType( 'atomic-blocks/ab-pricing-table-price', {
 			paddingTop,
 			paddingRight,
 			paddingBottom,
-			paddingLeft,
+			paddingLeft
 		} = props.attributes;
 
 		// Retreive the fontSizeClass
@@ -122,19 +124,19 @@ registerBlockType( 'atomic-blocks/ab-pricing-table-price', {
 		const backgroundClass = getColorClassName( 'background-color', backgroundColor );
 
 		// Setup wrapper class names
-		const wrapperClassName = classnames( {
+		const wrapperClassName = classnames({
 			'has-background': backgroundColor || customBackgroundColor,
 			'ab-pricing-table-price-wrap': true,
 			[ textClass ]: textClass,
 			[ backgroundClass ]: backgroundClass,
-			'ab-pricing-has-currency': showCurrency && currency,
-		} );
+			'ab-pricing-has-currency': showCurrency && currency
+		});
 
 		// Setup class names
-		const className = classnames( {
+		const className = classnames({
 			'ab-pricing-table-price': true,
-			[ fontSizeClass ]: fontSizeClass,
-		} );
+			[ fontSizeClass ]: fontSizeClass
+		});
 
 		// Setup styles
 		const wrapperStyles = {
@@ -143,25 +145,25 @@ registerBlockType( 'atomic-blocks/ab-pricing-table-price', {
 			paddingTop: paddingTop ? paddingTop + 'px' : undefined,
 			paddingRight: paddingRight ? paddingRight + 'px' : undefined,
 			paddingBottom: paddingBottom ? paddingBottom + 'px' : undefined,
-			paddingLeft: paddingLeft ? paddingLeft + 'px' : undefined,
+			paddingLeft: paddingLeft ? paddingLeft + 'px' : undefined
 		};
 
 		// Setup styles
 		const styles = {
-			fontSize: fontSizeClass ? undefined : customFontSize,
+			fontSize: fontSizeClass ? undefined : customFontSize
 		};
 
 		// Setup currency styles
 		var computedFontSize = fontSizeClass ? undefined : customFontSize;
-		var currencySize = Math.floor(computedFontSize / 2.5);
+		var currencySize = Math.floor( computedFontSize / 2.5 );
 		const currencyStyles = {
-			fontSize: computedFontSize ? currencySize + 'px' : undefined,
+			fontSize: computedFontSize ? currencySize + 'px' : undefined
 		};
 
 		// Setup term styles
-		var termSize = Math.floor(computedFontSize / 2.5);
+		var termSize = Math.floor( computedFontSize / 2.5 );
 		const termStyles = {
-			fontSize: computedFontSize ? termSize + 'px' : undefined,
+			fontSize: computedFontSize ? termSize + 'px' : undefined
 		};
 
 		// Save the block markup for the front end
@@ -175,7 +177,6 @@ registerBlockType( 'atomic-blocks/ab-pricing-table-price', {
 						<RichText.Content
 							tagName="span"
 							itemProp="priceCurrency"
-							placeholder={ __( '$', 'atomic-blocks' ) }
 							value={ currency }
 							className="ab-pricing-table-currency"
 							style={ currencyStyles }
@@ -200,4 +201,6 @@ registerBlockType( 'atomic-blocks/ab-pricing-table-price', {
 			</div>
 		);
 	},
-} );
+
+	deprecated: deprecated
+});

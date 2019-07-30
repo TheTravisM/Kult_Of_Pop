@@ -1,0 +1,26 @@
+/*-----------------------------------------*/
+/* -- [ VARIABLES ] -----------------------*/
+/*-----------------------------------------*/
+
+// settings: Global variables, site-wide settings, config switches, etc.
+
+/*
+* SETTINGS
+* Config...............Project-level configuration and feature switches.
+* Core.................inuitcss’ core and setup settings.
+* Global...............Project-wide variables and settings.
+*/
+
+/*
+@import 'var-borders';
+@import 'var-breakpoints';
+@import 'var-colors';
+@import 'var-spacing';
+@import 'var-transitions';
+@import 'var-typography';
+@import 'var-z-index';
+*/
+
+@import "_var-colors.scss";
+@import "_var-root.scss";
+@import "_var-typography.scss";

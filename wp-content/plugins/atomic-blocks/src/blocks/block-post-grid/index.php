@@ -9,9 +9,18 @@
 /**
  * Renders the post grid block on server.
  *
- * @param String $attributes  Pass the block attributes.
+ * @param string $attributes  Pass the block attributes.
+ * @return string HTML content for the post grid.
  */
 function atomic_blocks_render_block_core_latest_posts( $attributes ) {
+
+	/**
+	 * Global post object.
+	 * Used for excluding the current post from the grid.
+	 *
+	 * @var WP_Post
+	 */
+	global $post;
 
 	$categories = isset( $attributes['categories'] ) ? $attributes['categories'] : '';
 
@@ -26,6 +35,7 @@ function atomic_blocks_render_block_core_latest_posts( $attributes ) {
 			'offset'              => $attributes['offset'],
 			'post_type'           => $attributes['postType'],
 			'ignore_sticky_posts' => 1,
+			'post__not_in'        => array( $post->ID ), // Exclude the current post from the grid.
 		)
 	);
 
@@ -66,15 +76,11 @@ function atomic_blocks_render_block_core_latest_posts( $attributes ) {
 			/* Get the featured image */
 			if ( isset( $attributes['displayPostImage'] ) && $attributes['displayPostImage'] && $post_thumb_id ) {
 
-				/* Get the orientation class */
-				if ( $attributes['imageCrop'] === 'landscape' ) {
-					$post_thumb_size = 'ab-block-post-grid-landscape';
-				} else {
-					$post_thumb_size = 'ab-block-post-grid-square';
-				}
+				$post_thumb_size = 'full';
 
-				/* Get the alt text */
-				$alt = get_post_meta( $post_thumb_id, '_wp_attachment_image_alt', true );
+				if ( ! empty( $attributes['imageSize'] ) ) {
+					$post_thumb_size = $attributes['imageSize'];
+				}
 
 				/* Output the featured image */
 				$post_grid_markup .= sprintf(
@@ -354,10 +360,6 @@ function atomic_blocks_register_block_core_latest_posts() {
 					'type'    => 'string',
 					'default' => 'date',
 				),
-				'imageCrop'           => array(
-					'type'    => 'string',
-					'default' => 'landscape',
-				),
 				'readMoreText'        => array(
 					'type'    => 'string',
 					'default' => 'Continue Reading',
@@ -384,6 +386,19 @@ function atomic_blocks_register_block_core_latest_posts() {
 				'sectionTitleTag'     => array(
 					'type'    => 'string',
 					'default' => 'h2',
+				),
+				'imageSize'           => array(
+					'type'    => 'string',
+					'default' => 'full',
+				),
+				'url'                 => array(
+					'type'      => 'string',
+					'source'    => 'attribute',
+					'selector'  => 'img',
+					'attribute' => 'src',
+				),
+				'id'                  => array(
+					'type' => 'number',
 				),
 			),
 			'render_callback' => 'atomic_blocks_render_block_core_latest_posts',
