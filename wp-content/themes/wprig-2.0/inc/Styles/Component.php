@@ -277,49 +277,61 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 
 		$css_files = [
-			'wp-rig-global'     => [
+			'wp-rig-global' => [
 				'file'   => 'global.min.css',
 				'global' => true,
 			],
-			'wp-rig-comments'   => [
+			'wp-rig-comments' => [
 				'file'             => 'comments.min.css',
 				'preload_callback' => function() {
 					return ! post_password_required() && is_singular() && ( comments_open() || get_comments_number() );
 				},
 			],
-			'wp-rig-page'   => [
+			'wp-rig-page' => [
 				'file'             => 'page.min.css',
 				'preload_callback' => function() {
 					return is_page();
 				},
 			],
-			'wp-rig-test'   => [
+			'wp-rig-test' => [
 				'file'             => 'test.min.css',
 				'preload_callback' => '__return_true',
 			],
-			'wp-rig-c-header'   => [
+			'wp-rig-c-footer' => [
+				'file'             => 'c-footer.min.css',
+				'preload_callback' => '__return_true',
+			],
+			'wp-rig-c-header' => [
 				'file'             => 'c-header.min.css',
 				'preload_callback' => '__return_true',
 			],
-			'wp-rig-c-nav-header'   => [
+			'wp-rig-c-nav-footer' => [
+				'file'             => 'c-nav-footer.min.css',
+				'preload_callback' => '__return_true',
+			],
+			'wp-rig-c-nav-header' => [
 				'file'             => 'c-nav-header.min.css',
 				'preload_callback' => '__return_true',
 			],
-			'wp-rig-social-media'   => [
+			'wp-rig-c-social-media-footer' => [
+				'file'             => 'c-social-media-footer.min.css',
+				'preload_callback' => '__return_true',
+			],
+			'wp-rig-c-social-media' => [
 				'file'             => 'c-social-media.min.css',
 				'preload_callback' => '__return_true',
 			],
-			'wp-rig-content'    => [
+			'wp-rig-content' => [
 				'file'             => 'content.min.css',
 				'preload_callback' => '__return_true',
 			],
-			'wp-rig-sidebar'    => [
+			'wp-rig-sidebar' => [
 				'file'             => 'sidebar.min.css',
 				'preload_callback' => function() {
 					return wp_rig()->is_primary_sidebar_active();
 				},
 			],
-			'wp-rig-widgets'    => [
+			'wp-rig-widgets' => [
 				'file'             => 'widgets.min.css',
 				'preload_callback' => function() {
 					return wp_rig()->is_primary_sidebar_active();

@@ -20,9 +20,10 @@
 /*--------------------------------------------------------------
 # Imports
 --------------------------------------------------------------*/
+
 /* @import "_custom-properties.css";
 @import "_reset.css";
-@import "_typography.css"; 
+@import "_typography.css";
 /* @import "_elements.css"; */
 @import "./compiled.css";
 @import "./c-header.css";
@@ -62,6 +63,7 @@
 	top: 5px;
 	width: auto;
 	z-index: 100000;
+
 	/* Above WP toolbar. */
 }
 

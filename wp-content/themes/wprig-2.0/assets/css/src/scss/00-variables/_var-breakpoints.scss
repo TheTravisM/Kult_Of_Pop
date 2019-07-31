@@ -9,9 +9,8 @@ $breakpoint-xl  : 1200px; // Extra large screen / wide desktop
 
 
 $breakpoints: (
-  xs:  $breakpoint-xs,
-  sm:  $breakpoint-sm,
-  md:  $breakpoint-md,
-  lg:  $breakpoint-lg,
-  xl:  $breakpoint-xl
-) !default;
+	xs: $breakpoint-xs,
+	sm: $breakpoint-sm,
+	md: $breakpoint-md,
+	lg: $breakpoint-lg,
+	xl: $breakpoint-xl) !default;

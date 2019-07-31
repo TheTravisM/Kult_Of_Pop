@@ -1,0 +1,54 @@
+.c-social-media-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+  margin: 0 auto;
+  list-style: none;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-transition: all .35s ease-in;
+  transition: all .35s ease-in;
+}
+
+.c-social-media-footer_li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c-social-media-footer_link:hover .c-social-media-footer_img path, .c-social-media-footer_link:focus .c-social-media-footer_img path, .c-social-media-footer_link:active .c-social-media-footer_img path {
+  fill: #F89921 !important;
+  -webkit-transition: all .35s ease-in;
+  transition: all .35s ease-in;
+}
+
+.c-social-media-footer_img {
+  margin: 20px;
+  height: 60px;
+  width: auto;
+}
+
+.c-social-media-footer_img path {
+  fill: #fff;
+  -webkit-transition: all .35s ease-in;
+  transition: all .35s ease-in;
+}
+
+@media (min-width: 1100px) {
+  .c-social-media-footer {
+    display: none;
+  }
+}
+/*# sourceMappingURL=c-social-media-footer.css.map */

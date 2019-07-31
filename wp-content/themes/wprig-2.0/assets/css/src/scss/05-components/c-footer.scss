@@ -1,0 +1,63 @@
+/* -- [ COMPONENT : FOOTER ] --------------------------*/
+
+.c-footer {
+	background: $primary01;
+	width: 100%;
+	min-height: 300px;
+	color: #fff;
+	position: relative;
+
+	a {
+		color: #fff;
+	}
+
+	&_container {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		max-width: 1100px;
+		margin: 0 auto;
+	}
+
+	&_logo-link {
+		margin: 20px auto;
+
+		&:hover,
+		&:focus,
+		&:active {
+
+			.c-footer-logo_img path {
+				fill: #f89921 !important;
+			}
+		}
+	}
+
+	&_logo-img {
+		height: 160px;
+	}
+
+	&_fine-print {
+		display: flex;
+		justify-content: flex-end;
+		border-top: 1px solid #fff;
+		padding: 20px 0;
+		margin: 0 40px;
+		min-width: 100%;
+	}
+}
+
+// -- // Small screen / phone and Up -- //
+@media (min-width: 576px) {
+
+	.c-footer {
+
+		&_container {
+			flex-direction: row;
+		}
+
+		&_logo-link {
+			flex: 1;
+		}
+	}
+}

@@ -7,8 +7,6 @@
 
 namespace WP_Rig\WP_Rig;
 
-
-
 ?>
 
 <h1 class="c-header_logo">

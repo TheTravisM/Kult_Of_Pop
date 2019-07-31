@@ -1,0 +1,48 @@
+.c-social-media-footer {
+	display: flex;
+	flex-flow: wrap;
+	flex-direction: row;
+	flex: 1;
+	width: 100%;
+	align-self: stretch;
+	margin: 0 auto;
+	list-style: none;
+	justify-content: space-around;
+	transition: all 0.35s ease-in;
+
+	&_li {
+		display: flex;
+	}
+
+	&_link {
+
+		&:hover,
+		&:focus,
+		&:active {
+
+			.c-social-media-footer_img path {
+				fill: #f89921 !important;
+				transition: all 0.35s ease-in;
+			}
+		}
+	}
+
+	&_img {
+		margin: 20px;
+		height: 60px;
+		width: auto;
+
+		path {
+			fill: #fff;
+			transition: all 0.35s ease-in;
+		}
+	}
+}
+
+// -- // Small screen / phone and Up -- //
+@media (min-width: 1100px) {
+
+	.c-social-media-footer {
+		display: none;
+	}
+}
