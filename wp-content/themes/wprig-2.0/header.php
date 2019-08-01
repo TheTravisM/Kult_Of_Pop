@@ -25,7 +25,7 @@ wp_rig()->print_script( 'wp-rig-c-header' );
 		<!-- CDN Cloud Flair -->
 		<link rel="dns-prefetch preconnect" href="//cdnjs.cloudflare.com" crossorigin>
 		<!-- Google CDN -->
-		<link rel="dns-prefetch" href="//ajax.googleapis.com">
+		<link rel="dns-prefetch preconnect"" href="//ajax.googleapis.com" crossorigin>
 
 	<!-- Meta Tags -->
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -48,6 +48,10 @@ wp_rig()->print_script( 'wp-rig-c-header' );
 	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f8991d">
 	<meta name="msapplication-TileColor" content="#f8991d">
 	<meta name="theme-color" content="#ffffff">
+
+	<!-- JS -->
+
+
 
 	<?php
 	if ( ! wp_rig()->is_amp() ) {
