@@ -1,8 +1,15 @@
 /assets/js/libs/**
-/assets/css/**/**
 /node_modules/**
 /vendor/**
 /config/**
+#css
+/assets/css/**
+/assets/css/**/**/**
+/assets/css/src/**
+/assets/css/src/scss/**
+# File type
+/assets/css/src/*.css
+/assets/css/src/scss/**/*.scss
 
 # Because parsing error: 'import' and 'export' may appear only with 'sourceType: module'
 /gulpfile.babel.js

@@ -1,0 +1,15 @@
+{
+  "theme": {
+    "slug": "kult-of-pop",
+    "name": "Kult Of Pop",
+    "author": "Travis E Mikolay"
+  },
+  "dev": {
+    "browserSync": {
+      "live": true,
+      "proxyURL": "localhost:8888/",
+      "bypassPort": "8181",
+      "https": true
+    }
+  }
+}

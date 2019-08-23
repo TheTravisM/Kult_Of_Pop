@@ -2,12 +2,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-flow: wrap;
-      flex-flow: wrap;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -18,8 +18,8 @@
   list-style: none;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-transition: all .35s ease-in;
-  transition: all .35s ease-in;
+  -webkit-transition: all 0.35s ease-in;
+  transition: all 0.35s ease-in;
 }
 
 .c-social-media-footer_li {
@@ -29,9 +29,9 @@
 }
 
 .c-social-media-footer_link:hover .c-social-media-footer_img path, .c-social-media-footer_link:focus .c-social-media-footer_img path, .c-social-media-footer_link:active .c-social-media-footer_img path {
-  fill: #F89921 !important;
-  -webkit-transition: all .35s ease-in;
-  transition: all .35s ease-in;
+  fill: #f89921 !important;
+  -webkit-transition: all 0.35s ease-in;
+  transition: all 0.35s ease-in;
 }
 
 .c-social-media-footer_img {
@@ -42,8 +42,8 @@
 
 .c-social-media-footer_img path {
   fill: #fff;
-  -webkit-transition: all .35s ease-in;
-  transition: all .35s ease-in;
+  -webkit-transition: all 0.35s ease-in;
+  transition: all 0.35s ease-in;
 }
 
 @media (min-width: 1100px) {
