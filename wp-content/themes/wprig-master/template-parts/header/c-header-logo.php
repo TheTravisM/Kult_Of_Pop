@@ -31,7 +31,10 @@ namespace WP_Rig\WP_Rig;
 		</svg>
 		<!-- [ Logo - SMALL ] -->
 		<svg version="1.1" id="kult-logo-sm" class="c-header_logo-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 40 40" style="enable-background:new 0 0 40 40;" xml:space="preserve">
-			<style type="text/css">#kult-logo-sm .st0{fill:#FFF}#kult-logo-sm .st1{fill:#F89921}</style>
+			<style type="text/css">
+				#kult-logo-sm .st0{fill:#FFF}
+				#kult-logo-sm .st1{fill:#F89921}
+			</style>
 			<path class="st0" d="M0,0v40h40V0H0z M38.4,38.4H1.6V1.6h36.8V38.4z"/>
 			<path class="st1" d="M15.8,11.9c0,1.4,0,6.4,0,6.4h-2.5v-5.1H9v5.1H6.5V6.5H9v4.2c0,0,2.3,0,2.5,0C12,9.6,12.1,8.7,13,6.5 c0.6,0,2.7,0,2.7,0l-1.7,4.2c0,0,0.1,0,0.4,0c0.3,0,0.6,0.1,0.9,0.3C15.6,11.3,15.8,11.6,15.8,11.9z"/>
 			<path class="st1" d="M33.5,6.5c0,2.4,0,5.7,0,10.6c0,0.3-0.1,0.6-0.3,0.9c-0.2,0.2-0.5,0.4-0.9,0.4c-1.1,0-4.7,0-6.8,0 c-0.3,0-0.6-0.1-0.9-0.4c-0.2-0.2-0.4-0.5-0.4-0.9c0-1.2,0-2.7,0-4.6c0-1.8,0-3.6,0-6c0.5,0,1.4,0,2.5,0c0,2.2,0,4.9,0,9.3 c0.6,0,3.2,0,4.3,0c0-2.2-0.1-4.9-0.1-9.3C31.5,6.5,32.4,6.5,33.5,6.5z"/>

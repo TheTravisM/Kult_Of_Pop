@@ -48,13 +48,12 @@
 	align-items: center;
 }
 
+/* -- Header Logo -- */
+
 .c-header_logo {
-	-ms-flex-item-align: start;
 	align-self: flex-start;
 	z-index: 1000;
-	-webkit-transition: all 0.35s ease-in;
-	transition: all 0.35s ease-in;
-	-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0.01);
+	transition: var(--kult-transition);
 	box-shadow: 0 0 0 rgba(0, 0, 0, 0.01);
 	font-size: 0;
 	margin: 0;
@@ -63,9 +62,10 @@
 .c-header_logo:hover,
 .c-header_logo:focus,
 .c-header_logo:active {
-	-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 1);
 	box-shadow: 0 0 5px rgba(0, 0, 0, 1);
 }
+
+/* -- Header Logo Large -- */
 
 .c-header_logo:hover #kult-logo-lg .st0,
 .c-header_logo:focus #kult-logo-lg .st0,
@@ -85,6 +85,19 @@
 .c-header_logo:focus #kult-logo-lg .st2,
 .c-header_logo:active #kult-logo-lg .st2 {
 	fill: var(--color-kult-orange);
+}
+
+/* -- Large Logo Small -- */
+.c-header_logo:hover #kult-logo-sm .st0,
+.c-header_logo:focus #kult-logo-sm .st0,
+.c-header_logo:active #kult-logo-sm .st0 {
+	fill: var(--color-kult-orange);
+}
+
+.c-header_logo:hover #kult-logo-sm .st1,
+.c-header_logo:focus #kult-logo-sm .st1,
+.c-header_logo:active #kult-logo-sm .st1 {
+	fill: var(--color-kult-white);
 }
 
 .c-header_logo-img {

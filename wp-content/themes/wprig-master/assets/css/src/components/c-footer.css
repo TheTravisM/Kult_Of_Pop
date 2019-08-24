@@ -32,12 +32,14 @@
 .c-footer_logo-img path {
 	fill: var(--color-kult-white);
 	opacity: 0.5;
+	transition: all 0.35s ease-in;
 }
 
 .c-footer_logo-link:hover .c-footer_logo-img path,
 .c-footer_logo-link:focus .c-footer_logo-img path,
 .c-footer_logo-link:active .c-footer_logo-img path {
 	fill: var(--color-kult-orange) !important;
+	opacity: 1;
 }
 
 .c-footer_logo-img {
@@ -51,6 +53,7 @@
 	border-top: 1px solid var(--color-kult-white);
 	padding: 20px 0;
 	margin: 0 auto;
+	font-size: 10px;
 	width: calc(100% - 80px);
 	max-width: 100%;
 }

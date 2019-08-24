@@ -57,14 +57,13 @@
 
 	.c-header-social-media_img path {
 		fill: var(--color-kult-white);
-		transition: all 0.35s ease-in;
+		transition: var(--kult-transition);
 	}
 
 	.c-header-social-media_link:hover .c-header-social-media_img path,
 	.c-header-social-media_link:focus .c-header-social-media_img path,
 	.c-header-social-media_link:active .c-header-social-media_img path {
 		fill: var(--color-kult-orange) !important;
-		transition: all 0.35s ease-in;
 		transition: var(--kult-transition, all 0.35s ease-in);
 	}
 

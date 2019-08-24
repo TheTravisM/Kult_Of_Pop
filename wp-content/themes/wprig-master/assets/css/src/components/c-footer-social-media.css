@@ -11,8 +11,7 @@
 	list-style: none;
 	-ms-flex-pack: distribute;
 	justify-content: space-around;
-	-webkit-transition: all 0.35s ease-in;
-	transition: all 0.35s ease-in;
+	transition: var(--kult-transition);
 }
 
 .c-footer-social-media_li {
@@ -21,14 +20,14 @@
 
 .c-footer-social-media_img path {
 	fill: var(--color-kult-white);
-	transition: all 0.35s ease-in;
+	transition: var(--kult-transition);
 }
 
 .c-footer-social-media_link:hover .c-footer-social-media_img path,
 .c-footer-social-media_link:focus .c-footer-social-media_img path,
 .c-footer-social-media_link:active .c-footer-social-media_img path {
 	fill: var(--color-kult-orange) !important;
-	transition: all 0.35s ease-in;
+	transition: var(--kult-transition);
 }
 
 .c-footer-social-media_img {
