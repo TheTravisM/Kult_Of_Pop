@@ -22,7 +22,7 @@ html {
 
 /* stylelint-disable */
 body {
-	background: #fff;
+	background: var(--color-kult-white)
 	/* Fallback for when there is no custom background color defined. */
 }
 /* stylelint-enable */
@@ -38,7 +38,8 @@ hr {
 
 ul,
 ol {
-
+	margin: 0;
+	padding: 0;
 	/*  margin: 0 0 1.5em 3em; */
 }
 
@@ -53,7 +54,7 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	/* margin-left: 1.5em; */
 }
 
 dt {
@@ -74,7 +75,7 @@ img {
 
 /* Extra wide images within figure tags don't overflow the content area. */
 figure {
-	margin: 0.5em 0;
+	/* margin: 0.5em 0; */
 }
 
 table {

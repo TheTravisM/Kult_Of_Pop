@@ -14,8 +14,8 @@ namespace WP_Rig\WP_Rig;
 		<!-- [ Logo - Large ] -->
 		<svg version="1.1" id="kult-logo-lg" class="c-header_logo-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 128.3 161" style="enable-background:new 0 0 128.3 161;" xml:space="preserve">
 			<style type="text/css">
-			#kult-logo-lg .st0{fill:#FFF;stroke:#17181E;stroke-miterlimit:10}
-			#kult-logo-lg .st1{fill:#17181E}.st2{fill:#F89921}
+				#kult-logo-lg .st0{fill:#FFF;stroke:#17181E;stroke-miterlimit:10}
+				#kult-logo-lg .st1{fill:#17181E}.st2{fill:#F89921}
 			</style>
 			<rect x="0.5" y="0.5" class="st0" width="127.3" height="160"/>
 			<polygon class="st1" points="53.2,106 53.2,109.6 18.7,109.6 18.7,18.7 109.6,18.7 109.6,109.6 75,109.6 75,106 106,106 106,22.3 22.3,22.3 22.3,106 "/>

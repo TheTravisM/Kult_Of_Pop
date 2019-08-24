@@ -20,8 +20,8 @@
 }
 
 .c-footer-nav_link {
-	color: #fff;
-	font-family: $header-font-family;
+	color: var(--color-kult-white);
+	font-family: var(--kult-highlight-font-family);
 	font-weight: 600;
 	font-size: 21px;
 	padding: 15px;
@@ -33,7 +33,7 @@
 .c-footer-nav_link:hover,
 .c-footer-nav_link:focus,
 .c-footer-nav_link:active {
-	color: #f89921;
+	color: var(--color-kult-orange);
 	text-shadow: 0 0 5px #000;
 	background-color: rgba(0, 0, 0, 0.1);
 }

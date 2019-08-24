@@ -1,4 +1,5 @@
 /* -- [ COMPONENT : HEADER-Nav ] --------------------------*/
+
 .c-header-nav {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -11,11 +12,8 @@
 .c-header-nav_ul {
 	list-style: none;
 	display: flex;
-	-webkit-box-orient: horizontal;
 	flex-direction: row;
 	flex: 1;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
 	justify-content: center;
 	width: 100%;
 	margin: 0;
@@ -36,12 +34,10 @@
 .c-header-nav_link,
 .c-header-nav_link:visited {
 	display: flex;
-	-webkit-box-flex: 1;
-	-ms-flex: 1;
 	flex: 1;
 	align-items: center;
 	justify-content: center;
-	color: #fff;
+	color: var(--color-kult-white);
 	font-family: Oswald, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	font-weight: 600;
@@ -60,7 +56,7 @@
 .c-header-nav_link:hover,
 .c-header-nav_link:focus,
 .c-header-nav_link:active {
-	color: #f89921;
+	color: var(--color-kult-orange);
 	background-color: rgba(0, 0, 0, 0.25);
 	box-shadow: inset 0 0 5px var(--color-kult-super-dark, #000);
 	text-shadow: 0 0 5px var(--color-kult-super-dark, #000);

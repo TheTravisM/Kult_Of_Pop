@@ -15,17 +15,18 @@ wp_rig()->print_styles( 'wp-rig-c-footer' );
 
 ?>
 
-	<footer id="colophon" class="site-footer c-footer">
-
-		<!-- [ Footer Logo ] -->
-		<?php get_template_part( 'template-parts/footer/c-footer-logo-link' ); ?>
-		<!-- [ Footer Nav ] -->
-		<?php get_template_part( 'template-parts/footer/c-footer-nav' ); ?>
-		<!-- [ Social Media ] -->
-		<?php get_template_part( 'template-parts/footer/c-footer-social-media' ); ?>
-		<!-- [ Fine Print ] -->
-		<?php get_template_part( 'template-parts/footer/c-footer-fine-print' ); ?>
-
+	<footer id="colophon" class="c-footer">
+		<!-- [ Footer Container ] -->
+		<div class="c-footer_container">
+			<!-- [ Footer Logo ] -->
+			<?php get_template_part( 'template-parts/footer/c-footer-logo-link' ); ?>
+			<!-- [ Footer Nav ] -->
+			<?php get_template_part( 'template-parts/footer/c-footer-nav' ); ?>
+			<!-- [ Social Media ] -->
+			<?php get_template_part( 'template-parts/footer/c-footer-social-media' ); ?>
+			<!-- [ Fine Print ] -->
+			<?php get_template_part( 'template-parts/footer/c-footer-fine-print' ); ?>
+		</div>
 
 	</footer><!-- #colophon -->
 </div><!-- #page -->

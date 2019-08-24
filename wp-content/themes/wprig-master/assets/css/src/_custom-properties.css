@@ -14,7 +14,12 @@
 	--content-width: 45rem;
 	--dropdown-symbol-width: 0.7em;
 
+	/* Kult Fonts */
+	--kult-global-font-family: "Open Sans", "Helvetica", sans-serif;
+	--kult-highlight-font-family: "Roboto Condensed", "Helvetica Neue", "Arial Narrow", sans-serif;
+
 	/* Kult Colors */
+	--color-kult-white: #fff;
 	--color-kult-super-dark: #000;
 	--color-kult-black: #16161d;
 	--color-kult-orange: #f89921;

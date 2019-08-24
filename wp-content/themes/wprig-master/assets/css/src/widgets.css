@@ -162,7 +162,7 @@
 	padding: 0.2em;
 	font-size: 0.8em;
 	text-align: center;
-	background: #fff;
+	background: var(--color-kult-white);
 	border: 1px solid #ccc;
 }
 

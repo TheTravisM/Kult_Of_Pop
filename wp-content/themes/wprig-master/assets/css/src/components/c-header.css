@@ -10,7 +10,7 @@
 	justify-content: center;
 	width: 100%;
 	height: 40px;
-	color: #fff;
+	color: var(--color-kult-white);
 	position: -webkit-sticky;
 	position: sticky;
 	top: 0;
@@ -71,20 +71,20 @@
 .c-header_logo:focus #kult-logo-lg .st0,
 .c-header_logo:active #kult-logo-lg .st0 {
 	fill: #17181e;
-	stroke: #fff;
+	stroke: var(--color-kult-white);
 	stroke-miterlimit: 10;
 }
 
 .c-header_logo:hover #kult-logo-lg .st1,
 .c-header_logo:focus #kult-logo-lg .st1,
 .c-header_logo:active #kult-logo-lg .st1 {
-	fill: #fff;
+	fill: var(--color-kult-white);
 }
 
 .c-header_logo:hover #kult-logo-lg .st2,
 .c-header_logo:focus #kult-logo-lg .st2,
 .c-header_logo:active #kult-logo-lg .st2 {
-	fill: #f89921;
+	fill: var(--color-kult-orange);
 }
 
 .c-header_logo-img {
