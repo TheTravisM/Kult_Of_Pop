@@ -53,7 +53,7 @@
 .c-header_logo {
 	align-self: flex-start;
 	z-index: 1000;
-	transition: var(--kult-transition);
+	transition: var(--kult-transition, all 0.35s ease-in);
 	box-shadow: 0 0 0 rgba(0, 0, 0, 0.01);
 	font-size: 0;
 	margin: 0;

@@ -57,7 +57,7 @@
 
 	.c-header-social-media_img path {
 		fill: var(--color-kult-white);
-		transition: var(--kult-transition);
+		transition: var(--kult-transition, all 0.35s ease-in);
 	}
 
 	.c-header-social-media_link:hover .c-header-social-media_img path,
