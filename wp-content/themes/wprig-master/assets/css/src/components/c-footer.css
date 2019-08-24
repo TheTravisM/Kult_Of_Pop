@@ -32,7 +32,8 @@
 .c-footer_logo-img path {
 	fill: var(--color-kult-white);
 	opacity: 0.5;
-	transition: all 0.35s ease-in;
+	filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.01));
+	transition: var(--kult-transition, all 0.35s ease-in);
 }
 
 .c-footer_logo-link:hover .c-footer_logo-img path,
@@ -44,6 +45,14 @@
 
 .c-footer_logo-img {
 	height: 160px;
+	filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0.1));
+	transition: var(--kult-transition, all 0.35s ease-in);
+}
+
+.c-footer_logo-link:hover .c-footer_logo-img,
+.c-footer_logo-link:focus .c-footer_logo-img,
+.c-footer_logo-link:active .c-footer_logo-img {
+	filter: drop-shadow(0 0 20px rgba(0, 0, 0, 1));
 }
 
 
