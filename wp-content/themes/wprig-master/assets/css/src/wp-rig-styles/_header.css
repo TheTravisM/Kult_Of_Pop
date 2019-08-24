@@ -17,7 +17,8 @@
 	margin: 0 auto;
 }
 
-.custom-logo-link {
+.custom-logo-link,
+.custom-logo-link:visited {
 	display: inline-block;
 	margin: 0 auto 1em;
 }
