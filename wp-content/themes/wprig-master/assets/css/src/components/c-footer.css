@@ -19,7 +19,7 @@
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: space-between;
 	width: 100%;
 	max-width: 1100px;
 	margin: 20px auto;
@@ -78,7 +78,6 @@
 
 	.c-footer_logo-link,
 	.c-footer_logo-link:visited {
-		flex: 1;
 		align-self: flex-start;
 	}
 }

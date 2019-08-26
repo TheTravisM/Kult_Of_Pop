@@ -6,6 +6,7 @@
 /* stylelint-disable */
 a {
 	color: var(--color-kult-link);
+	text-shadow: 0 0 0 rgba( 255, 255, 255, 0.001);
 	transition: var(--kult-transition, all 0.35s ease-in);
 }
 /* stylelint-enable */

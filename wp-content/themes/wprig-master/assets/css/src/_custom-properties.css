@@ -26,9 +26,10 @@
 
 	/* Kult Links */
 	--color-kult-link: #f89921;
+	--color-kult-link-visited: #f89921;
 	--color-kult-link-active: #f08804;
-	--color-kult-link-visited: #f08804;
 
+	/* Transitions */
 	--kult-transition: all 0.35s ease-in;
 
 	/* Custom editor colors */
