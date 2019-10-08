@@ -94,6 +94,20 @@ Yes, you will need to have WordPress 5.0 or later installed to take advantage of
 
 ## Changelog
 
+**2.1.0**
+* Add background image support to Advanced Columns block.
+* Add 1-column support to Post Grid block.
+* Add missing class to Post Grid section title.
+* Fix layout modal state for upcoming Gutenberg update.
+* Disable automatic activation of Gutenberg plugin.
+
+**2.0.2**
+* Remove jQuery dependency when enqueuing dismiss.js.
+* Fix IE styles for blocks that use CSS Grid (pricing table and columns).
+* Fix undefined error for installs under WordPress 5.0.
+* Fix image display CSS property.
+* Fix specificity of CSS Grid for child elements.
+
 **2.0.1**
 * Add double opt-in option to Newsletter block.
 * Remove Google+ from Sharing block.
