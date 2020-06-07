@@ -1,0 +1,10 @@
+.kult-front-page_main {background-color: lightgray;}
+a.post-thumbnail {display: flex;overflow: hidden;}
+a.post-thumbnail img {transition: transform 2s ease;transform: scale(1);}
+a.post-thumbnail:hover img {transform: scale(1.1);}
+.kult-front-page_main article.sticky .entry-header {display: flex;flex-direction: column;position: relative;padding-right: 0;padding-left: 0;margin-right: 1.5rem;margin-left: 1.5rem;}
+.kult-front-page_main article.sticky .entry-title {position: absolute;top: 0;left: 0;background: rgba(0,0,0,.6);width: 100%;display: flex;padding: 4px 20px;margin: 0;}
+.kult-front-page_main article.sticky .entry-title a {color: #fff;text-shadow: 2px 2px 5px rgba(0,0,0,.8);}
+.kult-front-page_main article.sticky .entry-meta {color: #fff;display: flex;position: absolute;bottom: 0;left: 0;background: rgba(0,0,0,.6);font-weight: bold;margin: 0;padding: 4px 20px;text-shadow: 2px 2px 5px rgba(0,0,0,.8);width: 100%;}
+.kult-front-page_main article.sticky a.post-thumbnail {}
+.kult-front-page_main article.sticky a.post-thumbnail img {min-width: 100%;}
