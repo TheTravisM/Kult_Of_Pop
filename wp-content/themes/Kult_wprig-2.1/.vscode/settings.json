@@ -1,0 +1,12 @@
+{
+	// -- to get prettier to work -- //
+	"prettier.stylelintIntegration": false,
+	"prettier.eslintIntegration": true,
+	"editor.formatOnSave": false,
+	"editor.renderWhitespace": "all",
+
+	// -- Tab Settings -- ///
+	"editor.tabSize": 2,
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false
+}
