@@ -1,0 +1,6 @@
+@import url("./_custom-properties.css");
+a {color: var(--kult-color-link);text-decoration: none;}
+a:visited {color: var(--kult-color-link-visited);}
+a:hover, a:focus, a:active {color: var(--kult-color-link-active);text-decoration-line: underline;}
+a:focus {outline: thin dotted;}
+a:hover, a:active {outline: 0;}
