@@ -1,0 +1,9 @@
+.kult-front-page_main {background-color: #d3d3d3;}
+a.post-thumbnail {display: -webkit-box;display: -ms-flexbox;display: flex;overflow: hidden;}
+a.post-thumbnail img {-webkit-transition: -webkit-transform 2s ease;transition: -webkit-transform 2s ease;transition: transform 2s ease;transition: transform 2s ease,-webkit-transform 2s ease;-webkit-transform: scale(1);transform: scale(1);}
+a.post-thumbnail:hover img {-webkit-transform: scale(1.1);transform: scale(1.1);}
+.kult-front-page_main article.sticky .entry-header {display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;position: relative;padding-right: 0;padding-left: 0;margin-right: 1.5rem;margin-left: 1.5rem;}
+.kult-front-page_main article.sticky .entry-title {position: absolute;top: 0;left: 0;background: rgba(0,0,0,.6);width: 100%;display: -webkit-box;display: -ms-flexbox;display: flex;padding: 4px 20px;margin: 0;}
+.kult-front-page_main article.sticky .entry-meta, .kult-front-page_main article.sticky .entry-title a {color: #fff;text-shadow: 2px 2px 5px rgba(0,0,0,.8);}
+.kult-front-page_main article.sticky .entry-meta {display: -webkit-box;display: -ms-flexbox;display: flex;position: absolute;bottom: 0;left: 0;background: rgba(0,0,0,.6);font-weight: 700;margin: 0;padding: 4px 20px;width: 100%;}
+.kult-front-page_main article.sticky a.post-thumbnail img {min-width: 100%;}
